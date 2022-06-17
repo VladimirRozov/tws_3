@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.1-hudson-28-. --><xs:schema xmlns:tns="http://itmo.ru/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://itmo.ru/">
+
+<xs:element name="CastToIntException" nillable="true" type="tns:castToIntFault" />
+
+<xs:element name="EmptyFieldException" nillable="true" type="tns:emptyFieldFault" />
+
+<xs:element name="RowIsNotExistsException" nillable="true" type="tns:rowIsNotExistsFault" />
+
+<xs:element name="createLoyalty" type="tns:createLoyalty" />
+
+<xs:element name="createLoyaltyResponse" type="tns:createLoyaltyResponse" />
+
+<xs:element name="deleteLoyalty" type="tns:deleteLoyalty" />
+
+<xs:element name="deleteLoyaltyResponse" type="tns:deleteLoyaltyResponse" />
+
+<xs:element name="getAll" type="tns:getAll" />
+
+<xs:element name="getAllResponse" type="tns:getAllResponse" />
+
+<xs:element name="updateLoyalty" type="tns:updateLoyalty" />
+
+<xs:element name="updateLoyaltyResponse" type="tns:updateLoyaltyResponse" />
+
+<xs:complexType name="createLoyalty">
+<xs:sequence>
+<xs:element name="spbsoID" type="xs:string" minOccurs="0" />
+<xs:element name="fullName" type="xs:string" minOccurs="0" />
+<xs:element name="event" type="xs:string" minOccurs="0" />
+<xs:element name="cash" type="xs:string" minOccurs="0" />
+<xs:element name="brigade" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createLoyaltyResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="emptyFieldFault">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="castToIntFault">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAll">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="getAllResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:loyalty" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loyalty">
+<xs:sequence>
+<xs:element name="brigade" type="xs:string" minOccurs="0" />
+<xs:element name="cash" type="xs:string" minOccurs="0" />
+<xs:element name="event" type="xs:string" minOccurs="0" />
+<xs:element name="id" type="xs:int" />
+<xs:element name="name" type="xs:string" minOccurs="0" />
+<xs:element name="spbso" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteLoyalty">
+<xs:sequence>
+<xs:element name="rowId" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteLoyaltyResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rowIsNotExistsFault">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateLoyalty">
+<xs:sequence>
+<xs:element name="rowId" type="xs:string" minOccurs="0" />
+<xs:element name="spbsoID" type="xs:string" minOccurs="0" />
+<xs:element name="fullName" type="xs:string" minOccurs="0" />
+<xs:element name="event" type="xs:string" minOccurs="0" />
+<xs:element name="cash" type="xs:string" minOccurs="0" />
+<xs:element name="brigade" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateLoyaltyResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
